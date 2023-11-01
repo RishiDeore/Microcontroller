@@ -1,0 +1,17 @@
+#include<reg51.h>
+sbit wave=P2^1;
+void timer0 (void) interrupt 1
+{
+wave = ~wave;
+}
+void main()
+{
+while(1){
+void delay()
+TMOD=0X01;
+TH0=0XFF;
+TL0=0XF9;
+IE=0X82;
+TR0=1;
+}
+}

@@ -1,0 +1,30 @@
+A) All on all off
+
+#include<reg51.h>
+void delay();
+void main()
+{
+while(1)
+{
+P2=0X00;
+delay();
+P2=0xFF;
+delay();
+}
+}
+
+void delay()
+{
+int k;
+for(k=0; k<12; k++)
+{
+TMOD=0x01;
+TL0=0X00;
+TH0=0X01;
+TR0=1;
+while (TF0==0);
+TR0=0;
+TF0=0;
+}
+}
+

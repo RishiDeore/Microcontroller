@@ -1,0 +1,82 @@
+#include<REG51.h>   
+sbit rs = P2^2;  //RS pin connected to pin 2 of port 2
+sbit rw = P2^1;  // RW pin connected to pin 1 of port 2
+sbit en =  P2^0;  //E pin connected to pin 0 of port 2
+
+void DelayMs()
+{
+        int i ;
+	for(i=0;i<50;i++)
+	{
+	 TMOD=0x01;
+         TH0=0xfc;
+	 TLO=0x66;
+         TR0=1;
+         while(TF0==0);
+         TR0=0;
+         TF0=0;
+
+	}
+}
+
+void write_lcd_data(value)
+{
+   	/* data for lcd  */
+	P1 = value;
+	DelayMs();
+	rs=1;
+	rw=0;
+        en=1;
+	DelayMs();
+	en=0;
+}
+
+void write_lcd_command(value)
+{
+ /* command for lcd */
+
+	P1 = value;
+	DelayMs();
+	rs=0;
+	rw=0;
+        en=1;
+	DelayMs();
+	en=0;
+}
+
+
+void main(void)
+{
+P1 = 0x00;
+P2 = 0x00;
+
+write_lcd_command(0x38); //function set
+write_lcd_command(0x08); //display off
+write_lcd_command(0x01); //display clear
+write_lcd_command(0x06); //entry mode set
+write_lcd_command(0x0F); //display on 
+
+write_lcd_command(0x81); //set address counter value
+write_lcd_data('R');
+write_lcd_data('I');
+write_lcd_data('S');
+write_lcd_data('H');
+write_lcd_data('I');
+write_lcd_data('R');
+write_lcd_data('A');
+write_lcd_data('J');
+
+write_lcd_command(0xC0); //set address counter value
+write_lcd_data('D');
+write_lcd_data('E');
+write_lcd_data('O');
+write_lcd_data('R');
+write_lcd_data('E');
+
+
+while(1)
+{
+	
+}
+
+}
