@@ -7,7 +7,7 @@ wave = ~wave;
 void main()
 {
 while(1){
-void delay()
+void delay();
 TMOD=0X01;
 TH0=0XFF;
 TL0=0XF9;
