@@ -58,7 +58,7 @@ void main()
 
 	                    			B) LED INTERFACING WITH PIC
 
-#include <p18f4550.h>
+#include <pic18f4550.h>
 void delay(unsigned int time)
 {
     unsigned int i,j;
