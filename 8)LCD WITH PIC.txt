@@ -42,8 +42,8 @@ void SendData(unsigned char lcddata)
 }
 /**********************************************************************************
 **********************************/
-unsigned char *String1 = " Rishiraj Deore";
-unsigned char *String2 = " TEB30";
+unsigned char *String1 = " Welcome to";
+unsigned char *String2 = "ENTC Department";
 void main(void)
 {
  //ADCON1 = 0x0F;
