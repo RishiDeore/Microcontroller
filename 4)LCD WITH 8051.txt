@@ -10,7 +10,7 @@ void DelayMs()
 	{
 	 TMOD=0x01;
          TH0=0xfc;
-	 TLO=0x66;
+	 TL0=0x66;
          TR0=1;
          while(TF0==0);
          TR0=0;
