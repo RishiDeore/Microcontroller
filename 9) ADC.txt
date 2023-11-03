@@ -1,41 +1,4 @@
-
-Conversation opened. 2 messages. All messages read.
-
-Skip to content
-Using Gmail with screen readers
-16 of 907
-Fwd:
-Inbox
-
-Atharva <atharvatummulwar1873@gmail.com>
-Attachments
-Fri, 27 Oct, 13:45 (5 days ago)
-to me, vinodzunjare563@gmail.com
-
-
----------- Forwarded message ---------
-From: Mr. Shingade Dattatraya <shingade.dattatraya@dypvp.edu.in>
-Date: Fri, Oct 27, 2023, 13:42
-Subject:
-To: Atharva <atharvatummulwar1873@gmail.com>
-
-
-
-
-16
- Attachments
-  • Scanned by Gmail
-
-Rishiraj Deore <deorerishiraj2003@gmail.com>
-Attachments
-14:42 (3 hours ago)
-to Atharva
-
-
-16
- Attachments
-  • Scanned by Gmail
-#include <p18f4550.h>
+#include <pic18f4550.h>
 #include<stdio.h>
 #define LCD_EN LATAbits.LA1
 #define LCD_RS LATAbits.LA0
@@ -150,8 +113,3 @@ void main()
         lcd_delay(1000);
     }
 }
-
-
-
-8_ADC.c
-Displaying 8_ADC.c.
