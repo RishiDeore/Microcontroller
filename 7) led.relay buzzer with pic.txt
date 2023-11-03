@@ -1,5 +1,5 @@
 						A)Relay Buzzer INTERFACING WITH PIC
-#include<P18F4550.h>
+#include<pic18f4550.h>
 void delay()
 {
 	unsigned int i;
