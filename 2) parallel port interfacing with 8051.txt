@@ -12,7 +12,6 @@ P2=0xFF;
 delay();
 }
 }
-
 void delay()
 {
 int k;
