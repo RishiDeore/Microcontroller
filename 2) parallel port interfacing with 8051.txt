@@ -28,6 +28,33 @@ TF0=0;
 }
 }
 
+//four on four 0ff
+
+#include<reg51.h>
+void delay();
+
+void main() {
+	while(1) {
+		P2 = 0x0F;
+		delay();
+		P2 = 0xF0;
+		delay();
+	}
+}
+
+void delay() {
+	int k;
+	for(k = 0; k < 200; k++) {
+	TMOD = 0x01; //timer 0 mode 1
+	TL0 = 0x00;
+	TH0 = 0x01;
+	TR0 = 1; //start the timer
+	while(TF0 == 0);
+	TR0 = 0;
+	TF0 = 0;
+	}
+}
+
 //HEX counter
 
 #include<reg51.h>
