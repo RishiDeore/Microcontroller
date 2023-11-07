@@ -1,0 +1,76 @@
+// LED flashing (all on_off)
+
+#include <p18f4550.h>
+void delay(unsigned int time){
+   unsigned int i,j;
+   for(i=0;i<time;i++)
+       for(j=0;j<5000;j++);
+}
+
+void main(){
+    TRISB=0x00;
+    PORTB=0xFF;
+    while(1){
+        PORTB=~PORTB;
+        delay(500);
+    }
+}
+
+/*
+// LED flashing (alternate on-off)
+
+#include <p18f4550.h>
+void delay(unsigned int time){
+   unsigned int i,j;
+   for(i=0;i<time;i++)
+       for(j=0;j<5000;j++);
+}
+
+void main(){
+    TRISB=0x00;
+    PORTB=0xAA;
+    while(1){
+        PORTB=~PORTB;
+        delay(500);
+    }
+}
+
+//HEX decimal
+#include <p18f4550.h>
+void delay(unsigned int time){
+   unsigned int i,j;
+   for(i=0;i<time;i++)
+       for(j=0;j<5000;j++);
+}
+
+void main(){
+    TRISB=0x00;
+
+    while(1){
+        for(int i=0;i<=15;i++){
+        PORTB=i;
+        delay(500);
+            }
+    }
+}
+
+//BCD
+
+#include <p18f4550.h>
+void delay(unsigned int time){
+   unsigned int i,j;
+   for(i=0;i<time;i++)
+       for(j=0;j<5000;j++);
+}
+
+void main(){
+    TRISB=0x00;
+
+    while(1){
+        for(int i=0;i<=9;i++){
+        PORTB=i;
+        delay(500);
+            }
+    }
+}
+ * */
